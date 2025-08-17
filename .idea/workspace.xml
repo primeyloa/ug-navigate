@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +37,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -134,7 +130,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755390758123</updated>
-      <workItem from="1755390765304" duration="10803000" />
+      <workItem from="1755390765304" duration="11162000" />
     </task>
     <task id="LOCAL-00001" summary="files removed">
       <option name="closed" value="true" />
@@ -184,7 +180,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755449951340</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml">
+      <option name="closed" value="true" />
+      <created>1755474443461</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1755474443461</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml">
+      <option name="closed" value="true" />
+      <created>1755474519068</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755474519068</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

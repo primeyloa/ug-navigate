@@ -118,7 +118,7 @@ public class UGNavigateEngineEnhanced {
         }
 
         // Enhanced route processing
-        allRoutes = removeDuplicates(allRoutes);
+        allRoutes = removeDuplicateRoutes(allRoutes);
         allRoutes = applyUGCampusOptimizations(allRoutes, preferences);
 
         // Apply filters
