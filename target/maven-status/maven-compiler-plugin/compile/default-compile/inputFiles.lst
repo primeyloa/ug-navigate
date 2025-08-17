@@ -1,0 +1,13 @@
+/app/src/main/java/com/myuser/ugcampusroutefinder/ui/GuiApp.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/ShuttleOptimizer.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/OpenRouteServiceApiClient.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/ui/ConsoleApp.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/ui/RoutePainter.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/model/Route.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/SimulatedTrafficProvider.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/model/Path.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/CampusGraph.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/Pathfinder.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/model/ApiRoute.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/model/Location.java
+/app/src/main/java/com/myuser/ugcampusroutefinder/core/TrafficDataProvider.java
