@@ -1,7 +1,7 @@
+// UG Navigate: Main Routing Engine with Advanced Optimizations
+
 import java.util.*;
 import java.util.concurrent.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.stream.Collectors;
 
 /**
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public class UGNavigateEngine {
 
-    CampusGraph campusGraph;
+    private CampusGraph campusGraph;
     private LandmarkSearch.LandmarkSearchEngine searchEngine;
     private FloydWarshallPathfinder.AllPairsResult precomputedPaths;
     private ExecutorService threadPool;
@@ -393,3 +393,7 @@ public class UGNavigateEngine {
         }
     }
 }
+
+/**
+ * Traffic management system for dynamic route optimization
+ */
