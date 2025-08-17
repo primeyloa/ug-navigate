@@ -1,139 +1,128 @@
 package com.myuser.ugcampusroutefinder.ui;
 
-import com.myuser.ugcampusroutefinder.core.CampusGraph;
-import com.myuser.ugcampusroutefinder.core.Pathfinder;
-import com.myuser.ugcampusroutefinder.core.SimulatedTrafficProvider;
-import com.myuser.ugcampusroutefinder.model.Location;
-import com.myuser.ugcampusroutefinder.model.Path;
+import com.myuser.ugcampusroutefinder.core.OpenRouteServiceApiClient;
+import com.myuser.ugcampusroutefinder.model.ApiRoute;
+import org.jxmapviewer.JXMapViewer;
+import org.jxmapviewer.OSMTileFactoryInfo;
+import org.jxmapviewer.painter.CompoundPainter;
+import org.jxmapviewer.painter.Painter;
+import org.jxmapviewer.painter.WaypointPainter;
+import org.jxmapviewer.viewer.DefaultTileFactory;
+import org.jxmapviewer.viewer.DefaultWaypoint;
+import org.jxmapviewer.viewer.GeoPosition;
+import org.jxmapviewer.viewer.TileFactoryInfo;
+import org.jxmapviewer.viewer.Waypoint;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
-import java.util.Comparator;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
 
-/**
- * A graphical user interface for the UG Campus Route Finder using Java Swing.
- */
 public class GuiApp extends JFrame {
 
-    private final CampusGraph graph;
-    private final Pathfinder pathfinder;
-
-    private JComboBox<Location> startComboBox;
-    private JComboBox<Location> endComboBox;
-    private JButton findRouteButton;
-    private JTextArea resultArea;
+    private final JXMapViewer mapViewer;
+    private final OpenRouteServiceApiClient apiClient;
 
     public GuiApp() {
-        // 1. Initialize Core Components
-        graph = new CampusGraph();
-        try {
-            graph.loadFromCSV("data/campus_routes.csv");
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Failed to load map data: " + e.getMessage(), "Fatal Error", JOptionPane.ERROR_MESSAGE);
-            System.exit(1);
-        }
-        pathfinder = new Pathfinder(graph, new SimulatedTrafficProvider());
+        String apiKey = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjNkZjg1MDlmNDMxZDQ2MjM4MjA1MDkyMTA3ZjI1OWZlIiwiaCI6Im11cm11cjY0In0=";
+        this.apiClient = new OpenRouteServiceApiClient(apiKey);
 
-        // 2. Setup the Main Window (JFrame)
-        setTitle("UG Campus Route Finder");
-        setSize(500, 400);
+        // Setup the main window
+        super("UG Campus Route Finder v2.0");
+        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout(10, 10));
-        setLocationRelativeTo(null); // Center the window
+        setLocationRelativeTo(null);
 
-        // 3. Create UI Components
-        // Input Panel
-        JPanel inputPanel = new JPanel(new GridLayout(2, 2, 5, 5));
-        inputPanel.setBorder(BorderFactory.createTitledBorder("Route Selection"));
+        // Create a JXMapViewer
+        mapViewer = new JXMapViewer();
 
-        Location[] locations = graph.getLocations().stream().sorted(Comparator.comparing(Location::getName)).toArray(Location[]::new);
-        startComboBox = new JComboBox<>(locations);
-        endComboBox = new JComboBox<>(locations);
+        // Setup the TileFactory
+        TileFactoryInfo info = new OSMTileFactoryInfo();
+        DefaultTileFactory tileFactory = new DefaultTileFactory(info);
+        mapViewer.setTileFactory(tileFactory);
 
-        inputPanel.add(new JLabel("  Start Location:"));
-        inputPanel.add(startComboBox);
-        inputPanel.add(new JLabel("  End Location:"));
-        inputPanel.add(endComboBox);
+        // Set the focus
+        GeoPosition ugandaCampus = new GeoPosition(5.6506, -0.1871);
+        mapViewer.setZoom(3);
+        mapViewer.setAddressLocation(ugandaCampus);
 
-        // Button Panel
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        findRouteButton = new JButton("Find Best Route");
-        buttonPanel.add(findRouteButton);
+        // Add input controls
+        JPanel controlPanel = new JPanel();
+        JTextField startLat = new JTextField("5.6533", 8);
+        JTextField startLon = new JTextField("-0.1983", 8);
+        JTextField endLat = new JTextField("5.6511", 8);
+        JTextField endLon = new JTextField("-0.1841", 8);
+        JButton findRouteButton = new JButton("Find Route");
 
-        // Result Panel
-        resultArea = new JTextArea("Results will be displayed here.");
-        resultArea.setEditable(false);
-        resultArea.setLineWrap(true);
-        resultArea.setWrapStyleWord(true);
-        JScrollPane scrollPane = new JScrollPane(resultArea);
-        scrollPane.setBorder(BorderFactory.createTitledBorder("Result"));
+        controlPanel.add(new JLabel("Start Lat/Lon:"));
+        controlPanel.add(startLat);
+        controlPanel.add(startLon);
+        controlPanel.add(new JLabel("End Lat/Lon:"));
+        controlPanel.add(endLat);
+        controlPanel.add(endLon);
+        controlPanel.add(findRouteButton);
 
-        // 4. Add Components to Frame
-        add(inputPanel, BorderLayout.NORTH);
-        add(buttonPanel, BorderLayout.CENTER);
-        add(scrollPane, BorderLayout.SOUTH);
+        setLayout(new BorderLayout());
+        add(mapViewer, BorderLayout.CENTER);
+        add(controlPanel, BorderLayout.SOUTH);
 
-        // 5. Add Event Listener for the Button
-        findRouteButton.addActionListener(e -> findRoute());
+        findRouteButton.addActionListener(e -> findRoute(startLat, startLon, endLat, endLon));
+
+        setVisible(true);
     }
 
-    private void findRoute() {
-        Location start = (Location) startComboBox.getSelectedItem();
-        Location end = (Location) endComboBox.getSelectedItem();
+    private void findRoute(JTextField startLat, JTextField startLon, JTextField endLat, JTextField endLon) {
+        try {
+            GeoPosition start = new GeoPosition(Double.parseDouble(startLat.getText()), Double.parseDouble(startLon.getText()));
+            GeoPosition end = new GeoPosition(Double.parseDouble(endLat.getText()), Double.parseDouble(endLon.getText()));
 
-        if (start == null || end == null) {
-            resultArea.setText("Please select a start and end location.");
-            return;
-        }
-
-        if (start.equals(end)) {
-            resultArea.setText("Start and end locations must be different.");
-            return;
-        }
-
-        resultArea.setText("Calculating route from '" + start + "' to '" + end + "'...");
-        findRouteButton.setEnabled(false); // Disable button during calculation
-
-        // Use SwingWorker to perform the calculation off the Event Dispatch Thread (EDT)
-        new SwingWorker<Optional<Path>, Void>() {
-            @Override
-            protected Optional<Path> doInBackground() throws Exception {
-                // This runs on a background thread
-                return pathfinder.findShortestPath(start, end);
-            }
-
-            @Override
-            protected void done() {
-                // This runs on the EDT after doInBackground() is finished
-                try {
-                    Optional<Path> result = get(); // Get the result from doInBackground()
-                    if (result.isPresent()) {
-                        Path path = result.get();
-                        String routeStr = path.locations().stream()
-                            .map(Location::getName)
-                            .collect(Collectors.joining(" -> "));
-                        resultArea.setText(String.format("--- Best Route Found ---\n\nRoute: %s\n\nTotal Cost: %.2f units", routeStr, path.totalWeight()));
-                    } else {
-                        resultArea.setText("Sorry, no path could be found between '" + start.getName() + "' and '" + end.getName() + "'.");
-                    }
-                } catch (InterruptedException | ExecutionException ex) {
-                    resultArea.setText("An error occurred during calculation: " + ex.getMessage());
-                    ex.printStackTrace();
-                } finally {
-                    findRouteButton.setEnabled(true); // Re-enable the button
+            new SwingWorker<ApiRoute, Void>() {
+                @Override
+                protected ApiRoute doInBackground() throws Exception {
+                    return apiClient.getRoute(start, end);
                 }
-            }
-        }.execute();
+
+                @Override
+                protected void done() {
+                    try {
+                        ApiRoute route = get();
+
+                        RoutePainter routePainter = new RoutePainter(route.path());
+
+                        Set<Waypoint> waypoints = new HashSet<>();
+                        waypoints.add(new DefaultWaypoint(start));
+                        waypoints.add(new DefaultWaypoint(end));
+
+                        WaypointPainter<Waypoint> waypointPainter = new WaypointPainter<>();
+                        waypointPainter.setWaypoints(waypoints);
+
+                        List<Painter<JXMapViewer>> painters = new ArrayList<>();
+                        painters.add(routePainter);
+                        painters.add(waypointPainter);
+
+                        CompoundPainter<JXMapViewer> painter = new CompoundPainter<>(painters);
+                        mapViewer.setOverlayPainter(painter);
+
+                        String info = String.format("Route Found!\nDistance: %.2f km\nDuration: %.0f minutes",
+                                route.distance() / 1000, route.duration() / 60);
+                        JOptionPane.showMessageDialog(GuiApp.this, info, "Route Information", JOptionPane.INFORMATION_MESSAGE);
+
+                    } catch (InterruptedException | ExecutionException ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(GuiApp.this, "Error fetching route: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }.execute();
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Invalid latitude/longitude format.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static void main(String[] args) {
-        // Ensure the UI is created and updated on the Event Dispatch Thread
-        SwingUtilities.invokeLater(() -> {
-            new GuiApp().setVisible(true);
-        });
+        SwingUtilities.invokeLater(GuiApp::new);
     }
 }
