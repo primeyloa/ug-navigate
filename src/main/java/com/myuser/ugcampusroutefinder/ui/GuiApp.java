@@ -28,10 +28,10 @@ public class GuiApp extends JFrame {
 
     public GuiApp() {
         String apiKey = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjNkZjg1MDlmNDMxZDQ2MjM4MjA1MDkyMTA3ZjI1OWZlIiwiaCI6Im11cm11cjY0In0=";
+        super("UG Campus Route Finder v2.0");
         this.apiClient = new OpenRouteServiceApiClient(apiKey);
 
         // Setup the main window
-        super("UG Campus Route Finder v2.0");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
