@@ -1,8 +1,0 @@
-# Test data for unit tests
-# A simple, predictable graph
-start_location,end_location,distance_m
-A,B,10
-B,C,20
-A,C,40
-# A disconnected node
-D,E,5

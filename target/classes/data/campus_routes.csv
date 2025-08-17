@@ -1,8 +1,0 @@
-start_location,end_location,distance_m
-Main Gate,Library,500
-Main Gate,Admin Block,300
-Admin Block,Library,250
-Library,Science Block,400
-Science Block,Cafeteria,150
-Admin Block,Cafeteria,350
-Library,Cafeteria,600
