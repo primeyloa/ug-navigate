@@ -175,7 +175,7 @@ public class UGNavigateApplication extends JFrame {
         findRoutesButton = new JButton("🔍 Find Routes");
         findRoutesButton.setPreferredSize(new Dimension(140, 40));
         findRoutesButton.setBackground(new Color(0, 123, 255));
-        findRoutesButton.setForeground(Color.WHITE);
+        findRoutesButton.setForeground(Color.BLACK);
         findRoutesButton.setFont(new Font("Arial", Font.BOLD, 14));
         findRoutesButton.addActionListener(new FindRoutesActionListener());
 
