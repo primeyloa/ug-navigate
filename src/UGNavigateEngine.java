@@ -26,6 +26,10 @@ public class UGNavigateEngine {
         this.searchEngine = new LandmarkSearch.LandmarkSearchEngine(campusGraph);
     }
 
+    public CampusGraph getCampusGraph() {
+        return campusGraph;
+    }
+
     /**
      * Main route finding method with multiple optimization strategies
      */

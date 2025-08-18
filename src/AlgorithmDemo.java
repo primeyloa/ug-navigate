@@ -23,7 +23,7 @@ class AlgorithmDemo {
         // Test Dijkstra's Algorithm
         long startTime = System.currentTimeMillis();
         List<Route> dijkstraRoutes = DijkstraPathfinder.findMultiplePaths(
-                engine.campusGraph, source, destination, "walking", 3);
+                engine.getCampusGraph(), source, destination, "walking", 3);
         long dijkstraTime = System.currentTimeMillis() - startTime;
 
         System.out.printf("Dijkstra's Algorithm: %d routes found in %d ms\n",
@@ -32,7 +32,7 @@ class AlgorithmDemo {
         // Test A* Algorithm
         startTime = System.currentTimeMillis();
         Route aStarRoute = AStarPathfinder.findOptimalPath(
-                engine.campusGraph, source, destination, "walking");
+                engine.getCampusGraph(), source, destination, "walking");
         long aStarTime = System.currentTimeMillis() - startTime;
 
         System.out.printf("A* Algorithm: %s in %d ms\n",

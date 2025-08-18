@@ -145,6 +145,19 @@ public class UGNavigateEngineEnhanced {
     }
 
     /**
+     * Removes duplicate routes from a list.
+     * A route is considered a duplicate if it has the exact same sequence of locations.
+     *
+     * @param routes The list of routes that may contain duplicates.
+     * @return A new list of routes with duplicates removed.
+     */
+    private List<Route> removeDuplicateRoutes(List<Route> routes) {
+        // Using a LinkedHashSet to preserve the order of routes while removing duplicates.
+        // This relies on the .equals() and .hashCode() methods implemented in the Route class.
+        return new ArrayList<>(new LinkedHashSet<>(routes));
+    }
+
+    /**
      * Campus-specific route optimizations
      */
     private List<Route> applyUGCampusOptimizations(List<Route> routes, RoutePreferences preferences) {

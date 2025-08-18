@@ -81,4 +81,17 @@ class Route {
                 getFormattedTime(), String.join(" -> ",
                         path.stream().map(Location::getName).toArray(String[]::new)));
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Route route = (Route) o;
+        return Objects.equals(path, route.path);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(path);
+    }
 }
