@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Need to make changes to UGNavigateEngineEnhanced">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UGNavigateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +81,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\amoak\AppData\Roaming\JetBrains\IntelliJIdea2024.2\scratches" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amoak\AppData\Roaming\JetBrains\IntelliJIdea2024.2\scratches" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.UGNavigateApplication">
     <configuration name="ConsoleApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -148,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755390758123</updated>
       <workItem from="1755390765304" duration="12031000" />
-      <workItem from="1755518472947" duration="1877000" />
+      <workItem from="1755518472947" duration="2462000" />
     </task>
     <task id="LOCAL-00001" summary="files removed">
       <option name="closed" value="true" />
@@ -222,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755474912088</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Need to make changes to UGNavigateEngineEnhanced">
+      <option name="closed" value="true" />
+      <created>1755521390555</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755521390555</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

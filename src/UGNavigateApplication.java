@@ -182,14 +182,14 @@ public class UGNavigateApplication extends JFrame {
         clearButton = new JButton("🗑️ Clear");
         clearButton.setPreferredSize(new Dimension(100, 40));
         clearButton.setBackground(new Color(108, 117, 125));
-        clearButton.setForeground(Color.WHITE);
+        clearButton.setForeground(Color.BLACK);
         clearButton.setFont(new Font("Arial", Font.BOLD, 12));
         clearButton.addActionListener(e -> clearResults());
 
         JButton demoButton = new JButton("🎮 Demo");
         demoButton.setPreferredSize(new Dimension(100, 40));
         demoButton.setBackground(new Color(40, 167, 69));
-        demoButton.setForeground(Color.WHITE);
+        demoButton.setForeground(Color.BLACK);
         demoButton.setFont(new Font("Arial", Font.BOLD, 12));
         demoButton.addActionListener(e -> runDemo());
 
