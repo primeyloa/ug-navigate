@@ -10,6 +10,7 @@ class Location {
     private double longitude;
     private String type; // "academic", "administrative", "recreational", "service", etc.
     private List<String> keywords; // for searching (e.g., "bank", "library", "cafeteria")
+    private String googlePhotoUrl; // Google Photos link for the location
 
     public Location(String id, String name, double latitude, double longitude, String type) {
         this.id = id;
@@ -18,6 +19,17 @@ class Location {
         this.longitude = longitude;
         this.type = type;
         this.keywords = new ArrayList<>();
+        this.googlePhotoUrl = null;
+    }
+
+    public Location(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.id = null;
+        this.name = null;
+        this.type = null;
+        this.keywords = new ArrayList<>();
+        this.googlePhotoUrl = null;
     }
 
     // Getters and setters
@@ -27,6 +39,14 @@ class Location {
     public double getLongitude() { return longitude; }
     public String getType() { return type; }
     public List<String> getKeywords() { return keywords; }
+
+    public String getGooglePhotoUrl() {
+        return googlePhotoUrl;
+    }
+
+    public void setGooglePhotoUrl(String url) {
+        this.googlePhotoUrl = url;
+    }
 
     public void addKeyword(String keyword) {
         keywords.add(keyword.toLowerCase());

@@ -97,9 +97,41 @@ class DijkstraPathfinder {
     private static Route findAlternativePath(CampusGraph graph, Location source,
                                              Location destination, String transportMode,
                                              Set<List<Location>> excludePaths) {
-        // Simple alternative path finding by temporarily modifying edge weights
-        // This is a simplified approach for demonstration
-        return findShortestPath(graph, source, destination, transportMode).route;
+        // Build a set of directed edges to penalize
+        Set<String> penalized = new HashSet<>();
+        for (List<Location> p : excludePaths) {
+            for (int i = 0; i < p.size() - 1; i++) {
+                penalized.add(p.get(i).getId() + "->" + p.get(i + 1).getId());
+            }
+        }
+
+        Map<Location, Double> distances = new HashMap<>();
+        Map<Location, Location> predecessors = new HashMap<>();
+        PriorityQueue<LocationDistance> pq = new PriorityQueue<>();
+        Set<Location> visited = new HashSet<>();
+
+        for (Location loc : graph.getAllLocations()) distances.put(loc, Double.POSITIVE_INFINITY);
+        distances.put(source, 0.0);
+        pq.offer(new LocationDistance(source, 0.0));
+
+        while (!pq.isEmpty()) {
+            LocationDistance cur = pq.poll();
+            if (visited.contains(cur.location)) continue;
+            visited.add(cur.location);
+            if (cur.location.equals(destination)) break;
+
+            for (Edge edge : graph.getNeighbors(cur.location)) {
+                if (edge.isClosed()) continue;
+                Location nb = edge.getDestination();
+                double w = transportMode.equals("walking") ? edge.getWalkingTime() : edge.getDrivingTime();
+                String key = cur.location.getId()+"->"+nb.getId();
+                if (penalized.contains(key)) w *= 1.5; // discourage repeated edge usage
+                double nd = distances.get(cur.location) + w;
+                if (nd < distances.get(nb)) { distances.put(nb, nd); predecessors.put(nb, cur.location); pq.offer(new LocationDistance(nb, nd)); }
+            }
+        }
+
+        return reconstructPath(graph, predecessors, source, destination, transportMode);
     }
 
     private static Route reconstructPath(CampusGraph graph, Map<Location, Location> predecessors,

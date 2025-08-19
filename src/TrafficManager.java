@@ -27,8 +27,14 @@ class TrafficManager {
                 double finalMultiplier = trafficMultiplier * variation;
                 edge.setTrafficMultiplier(finalMultiplier);
 
-                // Occasionally simulate road closures (5% chance)
-                if (random.nextDouble() < 0.05) {
+                // Record per-road traffic multiplier so RouteUpdate can surface alerts
+                String roadKey = edge.getRoadName();
+                if (roadKey != null && !roadKey.isEmpty()) {
+                    currentTrafficConditions.put(roadKey, finalMultiplier);
+                }
+
+                // Occasionally simulate road closures (reduced chance for stability)
+                if (random.nextDouble() < 0.02) {
                     edge.setClosed(true);
                 } else {
                     edge.setClosed(false);

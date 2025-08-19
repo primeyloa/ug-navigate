@@ -40,6 +40,7 @@ public class UGNavigateEngineEnhanced {
      */
     public RouteResult findOptimalRoutes(String sourceId, String destinationId,
                                          RoutePreferences preferences) {
+        long startedAt = System.currentTimeMillis();
         Location source = campusGraph.getLocationById(sourceId);
         Location destination = campusGraph.getLocationById(destinationId);
 
@@ -117,6 +118,16 @@ public class UGNavigateEngineEnhanced {
                     "Error calculating routes: " + e.getMessage());
         }
 
+        // Add precomputed path as a fast fallback if available and not already included
+        try {
+            if (precomputedPaths != null) {
+                Route fwRoute = precomputedPaths.getPath(source, destination, preferences.transportMode, campusGraph);
+                if (fwRoute != null) {
+                    allRoutes.add(fwRoute);
+                }
+            }
+        } catch (Exception ignored) {}
+
         // Enhanced route processing
         allRoutes = removeDuplicateRoutes(allRoutes);
         allRoutes = applyUGCampusOptimizations(allRoutes, preferences);
@@ -141,7 +152,8 @@ public class UGNavigateEngineEnhanced {
         String message = String.format("Routes found successfully from %s to %s",
                 source.getName(), destination.getName());
 
-        return new RouteResult(allRoutes, message);
+        long duration = System.currentTimeMillis() - startedAt;
+        return new RouteResult(allRoutes, message, duration, startedAt);
     }
 
     /**
@@ -383,28 +395,46 @@ public class UGNavigateEngineEnhanced {
      * Combine two routes into one
      */
     private Route combineRoutes(Route route1, Route route2, String transportMode) {
-        Route combined = new Route(transportMode);
-
-        // Add all locations from first route
-        for (Location loc : route1.getPath()) {
-            combined.addLocation(loc);
-        }
-
-        // Add locations from second route (excluding the connecting point)
+        // Build combined list of locations then remove any cycles and rebuild edges
+        List<Location> combinedLocs = new ArrayList<>(route1.getPath());
         List<Location> secondPath = route2.getPath();
-        for (int i = 1; i < secondPath.size(); i++) {
-            combined.addLocation(secondPath.get(i));
+        for (int i = 1; i < secondPath.size(); i++) combinedLocs.add(secondPath.get(i));
+
+        return buildCleanRoute(combinedLocs, transportMode);
+    }
+
+    private Route buildCleanRoute(List<Location> locations, String transportMode) {
+        // Remove cycles by collapsing repeated nodes
+        List<Location> clean = new ArrayList<>();
+        Map<String, Integer> indexById = new HashMap<>();
+        for (Location loc : locations) {
+            String id = loc.getId();
+            if (indexById.containsKey(id)) {
+                int prev = indexById.get(id);
+                // drop tail after prev
+                for (int k = clean.size() - 1; k > prev; k--) {
+                    indexById.remove(clean.get(k).getId());
+                    clean.remove(k);
+                }
+                // do not add duplicate again; continue path from here
+            } else {
+                indexById.put(id, clean.size());
+                clean.add(loc);
+            }
         }
 
-        // Add all edges
-        for (Edge edge : route1.getEdges()) {
-            combined.addEdge(edge);
+        Route r = new Route(transportMode);
+        for (int i = 0; i < clean.size(); i++) {
+            r.addLocation(clean.get(i));
+            if (i < clean.size() - 1) {
+                Edge e = null;
+                for (Edge edge : campusGraph.getNeighbors(clean.get(i))) {
+                    if (edge.getDestination().equals(clean.get(i + 1))) { e = edge; break; }
+                }
+                if (e != null) r.addEdge(e);
+            }
         }
-        for (Edge edge : route2.getEdges()) {
-            combined.addEdge(edge);
-        }
-
-        return combined;
+        return r;
     }
 
     /**
@@ -735,5 +765,10 @@ public class UGNavigateEngineEnhanced {
         } catch (InterruptedException e) {
             threadPool.shutdownNow();
         }
+    }
+
+    // Expose graph for UI helpers (read-only usage in UI)
+    public CampusGraph getCampusGraph() {
+        return campusGraph;
     }
 }

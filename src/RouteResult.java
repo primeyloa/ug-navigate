@@ -9,20 +9,35 @@ import java.time.*;
 class RouteResult {
     private List<Route> routes;
     private String message;
-    private long calculationTime;
+    private long calculationTime; // deprecated: kept for backward compatibility
     private String timestamp;
+    private long durationMs;
+    private long startedAtMs;
 
     public RouteResult(List<Route> routes, String message) {
         this.routes = routes;
         this.message = message;
         this.calculationTime = System.currentTimeMillis();
         this.timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        this.durationMs = -1; // unknown in legacy constructor
+        this.startedAtMs = -1;
+    }
+
+    public RouteResult(List<Route> routes, String message, long durationMs, long startedAtMs) {
+        this.routes = routes;
+        this.message = message;
+        this.calculationTime = System.currentTimeMillis();
+        this.timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        this.durationMs = durationMs;
+        this.startedAtMs = startedAtMs;
     }
 
     public List<Route> getRoutes() { return routes; }
     public String getMessage() { return message; }
-    public long getCalculationTime() { return calculationTime; }
+    public long getCalculationTime() { return durationMs >= 0 ? durationMs : calculationTime; }
     public String getTimestamp() { return timestamp; }
+    public long getDurationMs() { return durationMs; }
+    public long getStartedAtMs() { return startedAtMs; }
 
     public boolean hasRoutes() { return routes != null && !routes.isEmpty(); }
 
