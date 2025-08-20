@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Need to make changes to UGNavigateEngineEnhanced">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Colors for foreground and buttons changed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755390758123</updated>
       <workItem from="1755390765304" duration="12031000" />
-      <workItem from="1755518472947" duration="2462000" />
+      <workItem from="1755518472947" duration="2648000" />
     </task>
     <task id="LOCAL-00001" summary="files removed">
       <option name="closed" value="true" />
@@ -226,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755521390555</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Colors for foreground and buttons changed">
+      <option name="closed" value="true" />
+      <created>1755521776797</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1755521776797</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +252,8 @@
     <MESSAGE value="files removed" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml" />
     <MESSAGE value="Need to make changes to UGNavigateEngineEnhanced" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need to make changes to UGNavigateEngineEnhanced" />
+    <MESSAGE value="Colors for foreground and buttons changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Colors for foreground and buttons changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
