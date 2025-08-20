@@ -4,60 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Need to make changes to UGNavigateEngineEnhanced">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Updates. Added a map to the application, sourced accurate data from OSM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/AStarPathfinder$AStarNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/AStarPathfinder$AStarNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/AStarPathfinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/AStarPathfinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/CampusGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/CampusGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/CampusStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/CampusStats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder$LocationDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder$LocationDistance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder$PathResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder$PathResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/DijkstraPathfinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/DistanceCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/DistanceCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/FloydWarshallPathfinder$AllPairsResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/FloydWarshallPathfinder$AllPairsResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/FloydWarshallPathfinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/FloydWarshallPathfinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$BinarySearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$BinarySearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$LandmarkSearchEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$LandmarkSearchEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$RouteFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch$RouteFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/LandmarkSearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Location.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/PerformanceMonitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/PerformanceMonitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteComparators.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteComparators.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RoutePreferences.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RoutePreferences.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$AdaptiveSorting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$AdaptiveSorting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$MergeSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$MergeSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$QuickSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting$QuickSort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteSorting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/RouteUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/RouteUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/TrafficManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/TrafficManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osrm_cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/osrm_cache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusDataEnhanced.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusDataEnhanced.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusNavigationDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusNavigationDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusNavigationIntegration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusNavigationIntegration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngineEnhanced.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngineEnhanced.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DijkstraPathfinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DijkstraPathfinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FloydWarshallPathfinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FloydWarshallPathfinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RouteResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouteResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RouteSorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RouteSorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TrafficManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrafficManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UGCampusDataEnhanced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGCampusDataEnhanced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateEngineEnhanced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateEngineEnhanced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ug-navigate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ug-navigate.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +149,8 @@
       <workItem from="1755596259960" duration="921000" />
       <workItem from="1755614295082" duration="643000" />
       <workItem from="1755614973911" duration="13760000" />
-      <workItem from="1755638635378" duration="4246000" />
+      <workItem from="1755638635378" duration="5611000" />
+      <workItem from="1755678223602" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="files removed">
       <option name="closed" value="true" />
@@ -272,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755474912088</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updates. Added a map to the application, sourced accurate data from OSM">
+      <option name="closed" value="true" />
+      <created>1755647522708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755647522708</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +254,8 @@
     <MESSAGE value="files removed" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml" />
     <MESSAGE value="Need to make changes to UGNavigateEngineEnhanced" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need to make changes to UGNavigateEngineEnhanced" />
+    <MESSAGE value="Updates. Added a map to the application, sourced accurate data from OSM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates. Added a map to the application, sourced accurate data from OSM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

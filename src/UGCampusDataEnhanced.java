@@ -32,7 +32,7 @@ public class UGCampusDataEnhanced {
         greatHall.setGooglePhotoUrl("https://goo.gl/maps/2A3b4C5d6E7f8G9h1");
 
         // College of Basic and Applied Sciences (CBAS)
-        Location cbas = new Location("CBAS001", "CBAS Building", 5.6515, -0.1890, "academic");
+        Location cbas = new Location("CBAS001", "CBAS Building", 5.650173096628319, -0.18362565219508514, "academic");
         cbas.addKeyword("cbas");
         cbas.addKeyword("computer science");
         cbas.addKeyword("biology");
@@ -42,7 +42,7 @@ public class UGCampusDataEnhanced {
         cbas.setGooglePhotoUrl("https://goo.gl/maps/3D4e5F6g7H8i9J1k2");
 
         // Faculty of Arts Building
-        Location artsBuilding = new Location("ARTS001", "Faculty of Arts", 5.6509624, -0.1883361, "academic");
+        Location artsBuilding = new Location("ARTS001", "School of Performing Arts", 5.650188842548195, -0.1819559681967906, "academic");
         artsBuilding.addKeyword("arts");
         artsBuilding.addKeyword("languages");
         artsBuilding.addKeyword("literature");
@@ -51,7 +51,7 @@ public class UGCampusDataEnhanced {
         artsBuilding.setGooglePhotoUrl("https://goo.gl/maps/4K5l6M7n8O9p1Q2r3");
 
         // Business School (UGBS)
-        Location businessSchool = new Location("UGBS001", "UG Business School", 5.6528087, -0.188627, "academic");
+        Location businessSchool = new Location("UGBS001", "UG Business School", 5.65279954129461, -0.18896860853388794, "academic");
         businessSchool.addKeyword("ugbs");
         businessSchool.addKeyword("business");
         businessSchool.addKeyword("mba");
@@ -60,24 +60,22 @@ public class UGCampusDataEnhanced {
         businessSchool.setGooglePhotoUrl("https://goo.gl/maps/5S6t7U8v9W1x2Y3z4");
 
         // School of Law
-        Location lawSchool = new Location("LAW001", "UG School of Law", 5.6525, -0.1883, "academic");
+        Location lawSchool = new Location("LAW001", "UG School of Law", 5.654288594210895, -0.18330599919933455, "academic");
         lawSchool.addKeyword("law");
         lawSchool.addKeyword("legal");
         lawSchool.addKeyword("court");
         lawSchool.addKeyword("justice");
         lawSchool.setGooglePhotoUrl("https://goo.gl/maps/6A7b8C9d1E2f3G4h5");
 
-        // College of Health Sciences
-        Location healthSciences = new Location("CHS001", "College of Health Sciences", 5.637016, -0.1829065, "academic");
-        healthSciences.addKeyword("health");
-        healthSciences.addKeyword("medicine");
-        healthSciences.addKeyword("medical");
-        healthSciences.addKeyword("nursing");
-        healthSciences.addKeyword("pharmacy");
-        healthSciences.setGooglePhotoUrl("https://goo.gl/maps/7D8e9F1g2H3i4J5k6");
+        // College of Humanities
+        Location humanities = new Location("CHS001", "College of Humanitites", 5.65383030108746, -0.18206039198784751, "academic");
+        humanities.addKeyword("humanities");
+        humanities.addKeyword("college");
+        humanities.addKeyword("social work");
+        humanities.addKeyword("sociology");
 
         // School of Engineering Sciences
-        Location engineering = new Location("ENG001", "School of Engineering Sciences", 5.6555768, -0.1828086, "academic");
+        Location engineering = new Location("ENG001", "School of Engineering Sciences", 5.655379839860578, -0.18302215256588011, "academic");
         engineering.addKeyword("engineering");
         engineering.addKeyword("civil");
         engineering.addKeyword("electrical");
@@ -86,12 +84,53 @@ public class UGCampusDataEnhanced {
         engineering.setGooglePhotoUrl("https://goo.gl/maps/8K9l1M2n3O4p5Q6r7");
 
         // Institute of African Studies
-        Location africanStudies = new Location("IAS001", "Institute of African Studies", 5.6522, -0.1890, "academic");
+        Location africanStudies = new Location("IAS001", "Institute of African Studies", 5.651072925868113, -0.18188925946844406, "academic");
         africanStudies.addKeyword("african studies");
         africanStudies.addKeyword("culture");
         africanStudies.addKeyword("research");
         africanStudies.addKeyword("heritage");
         africanStudies.setGooglePhotoUrl("https://goo.gl/maps/9S1t2U3v4W5x6Y7z8");
+
+        // Math Department
+        Location mathDepartment = new Location("MATH001", "Department of Mathematics", 5.653809280152927, -0.1841133081909799, "academic");
+        mathDepartment.addKeyword("mathematics");
+        mathDepartment.addKeyword("math");
+        mathDepartment.addKeyword("statistics");
+
+        // Statistics Department
+        Location statsDepartment = new Location("STAT001", "Department of Statistics", 5.653875113397928, -0.18383608234425677, "academic");
+        statsDepartment.addKeyword("statistics");
+        statsDepartment.addKeyword("data analysis");
+        statsDepartment.addKeyword("probability");
+
+
+        // JQB
+        Location jqb = new Location("JQB001", "JQB Building", 5.652257144441632, -0.1817586779114727, "academic");
+        jqb.addKeyword("jqb");
+        jqb.addKeyword("lecture hall");
+        jqb.addKeyword("classroom");
+        jqb.setGooglePhotoUrl("https://goo.gl/maps/1A2B3C4D5E6F7G8H9");
+
+        // KAB
+        Location kab = new Location("KAB001", "KAB Building", 5.653003078528272, -0.1828060899119616, "academic");
+        kab.addKeyword("kab");
+        kab.addKeyword("lecture hall");
+        kab.addKeyword("classroom");
+        kab.setGooglePhotoUrl("https://goo.gl/maps/2B3C4D5E6F7G8H9I0");
+
+        // NNB
+        Location nnb = new Location("NNB001", "NNB Building", 5.656038498425652, -0.18795129873803554, "academic");
+        nnb.addKeyword("nnb");
+        nnb.addKeyword("lecture hall");
+        nnb.addKeyword("classroom");
+        nnb.setGooglePhotoUrl("https://goo.gl/maps/3C4D5E6F7G8H9I0J1");
+
+        // GCB Building
+        Location gcbBuilding = new Location("GCB001", "GCB Building", 5.6550611504086135, -0.18839834105861844, "academic");
+        gcbBuilding.addKeyword("gcb");
+        gcbBuilding.addKeyword("lecture hal");
+        gcbBuilding.addKeyword("classroom");
+        gcbBuilding.setGooglePhotoUrl("https://maps.app.goo.gl/BmUMUfr6YLmTnzec8");
 
         // =================== HALLS OF RESIDENCE ===================
 
@@ -110,14 +149,14 @@ public class UGCampusDataEnhanced {
         legonHall.addKeyword("residence");
 
         // Mensah Sarbah Hall (Vikings)
-        Location mensahSarbahHall = new Location("HALL003", "Mensah Sarbah Hall", 5.6459401, -0.187069, "residential");
+        Location mensahSarbahHall = new Location("HALL003", "Mensah Sarbah Hall", 5.645551639414955, -0.1862383514778894, "residential");
         mensahSarbahHall.addKeyword("mensah sarbah");
         mensahSarbahHall.addKeyword("vikings");
         mensahSarbahHall.addKeyword("hall");
         mensahSarbahHall.addKeyword("residence");
 
         // Akuafo Hall (Agric)
-        Location akuafoHall = new Location("HALL004", "Akuafo Hall", 5.6489767, -0.1856624, "residential");
+        Location akuafoHall = new Location("HALL004", "Akuafo Hall", 5.650447987120466, -0.18570665978470047, "residential");
         akuafoHall.addKeyword("akuafo");
         akuafoHall.addKeyword("agric");
         akuafoHall.addKeyword("hall");
@@ -167,13 +206,15 @@ public class UGCampusDataEnhanced {
         ugHospital.addKeyword("health");
         ugHospital.addKeyword("emergency");
 
-        // GCB Bank (University Branch)
-        Location gcbBank = new Location("BANK001", "GCB Bank UG Branch", 5.6512, -0.1888, "service");
-        gcbBank.addKeyword("gcb");
-        gcbBank.addKeyword("bank");
-        gcbBank.addKeyword("atm");
-        gcbBank.addKeyword("money");
-        gcbBank.addKeyword("finance");
+        // Banking Square
+        Location bankingSquare = new Location("BANK001", "Banking Square", 5.64337360867571, -0.18577521663729699, "service");
+        bankingSquare.addKeyword("gcb");
+        bankingSquare.addKeyword("bank");
+        bankingSquare.addKeyword("adb");
+        bankingSquare.addKeyword("stanbic");
+        bankingSquare.addKeyword("atm");
+        bankingSquare.addKeyword("money");
+        bankingSquare.addKeyword("finance");
 
         // Post Office
         Location postOffice = new Location("POST001", "University Post Office", 5.6508996, -0.1876341, "service");
@@ -183,21 +224,21 @@ public class UGCampusDataEnhanced {
         postOffice.addKeyword("letters");
 
         // University Bookshop
-        Location bookshop = new Location("SHOP001", "University Bookshop", 5.6511685, -0.1866539, "service");
+        Location bookshop = new Location("SHOP001", "University Bookshop", 5.651044992603521, -0.18672247254443233, "service");
         bookshop.addKeyword("bookshop");
         bookshop.addKeyword("books");
         bookshop.addKeyword("stationery");
         bookshop.addKeyword("supplies");
 
         // Security Office (Main Gate)
-        Location mainGate = new Location("SEC001", "Main Gate Security", 5.6495, -0.1910, "service");
+        Location mainGate = new Location("SEC001", "Main Gate Security", 5.650708824486976, -0.18096512514626895, "service");
         mainGate.addKeyword("main gate");
         mainGate.addKeyword("security");
         mainGate.addKeyword("entrance");
         mainGate.addKeyword("gate");
 
         // Registrar's Office
-        Location registrar = new Location("ADMIN001", "Registrar's Office", 5.6516, -0.1893, "administrative");
+        Location registrar = new Location("ADMIN001", "Registrar's Office", 5.650278038120751, -0.19542203229129249, "administrative");
         registrar.addKeyword("registrar");
         registrar.addKeyword("administration");
         registrar.addKeyword("academic records");
@@ -228,7 +269,7 @@ public class UGCampusDataEnhanced {
         swimmingPool.addKeyword("water sports");
 
         // Tennis Court
-        Location tennisCourt = new Location("SPORT003", "Tennis Courts", 5.6503, -0.1882, "recreational");
+        Location tennisCourt = new Location("SPORT003", "Tennis Courts", 5.648200884941211, -0.18760554333971086, "recreational");
         tennisCourt.addKeyword("tennis");
         tennisCourt.addKeyword("court");
         tennisCourt.addKeyword("racquet");
@@ -259,7 +300,7 @@ public class UGCampusDataEnhanced {
         voltaJcr.addKeyword("cafeteria");
 
         // Night Market Area
-        Location nightMarket = new Location("FOOD003", "Night Market", 5.6421513, -0.1856043, "service");
+        Location nightMarket = new Location("FOOD003", "Night Market", 5.643238460650406, -0.18641781564376692, "service");
         nightMarket.addKeyword("night market");
         nightMarket.addKeyword("food");
         nightMarket.addKeyword("street food");
@@ -291,7 +332,7 @@ public class UGCampusDataEnhanced {
         ugRadio.addKeyword("media");
 
         // Computer Science Department
-        Location compSci = new Location("DEPT001", "Computer Science Department", 5.6516, -0.1891, "academic");
+        Location compSci = new Location("DEPT001", "Computer Science Department", 5.654705726025264, -0.18388250574082665, "academic");
         compSci.addKeyword("computer science");
         compSci.addKeyword("cs");
         compSci.addKeyword("computing");
@@ -299,13 +340,13 @@ public class UGCampusDataEnhanced {
         compSci.addKeyword("IT");
 
         // Psychology Department
-        Location psychology = new Location("DEPT002", "Psychology Department", 5.6550778, -0.1867541, "academic");
+        Location psychology = new Location("DEPT002", "Psychology Department", 5.6552182038904135, -0.18658617229274124, "academic");
         psychology.addKeyword("psychology");
         psychology.addKeyword("mental health");
         psychology.addKeyword("behavioral");
 
         // Economics Department
-        Location economics = new Location("DEPT003", "Economics Department", 5.6511659, -0.1874726, "academic");
+        Location economics = new Location("DEPT003", "Economics Department", 5.651087178905147, -0.18742865977670714, "academic");
         economics.addKeyword("economics");
         economics.addKeyword("finance");
         economics.addKeyword("development");
@@ -313,7 +354,7 @@ public class UGCampusDataEnhanced {
         // =================== TRANSPORT HUBS ===================
 
         // Okponglo Junction (Main Campus Entrance)
-        Location okponglo = new Location("TRANS001", "Okponglo Junction", 5.6396227, -0.1694208, "transport");
+        Location okponglo = new Location("TRANS001", "Okponglo Junction", 5.640983749213432, -0.17894479009152092, "transport");
         okponglo.addKeyword("okponglo");
         okponglo.addKeyword("junction");
         okponglo.addKeyword("transport");
@@ -321,7 +362,7 @@ public class UGCampusDataEnhanced {
         okponglo.addKeyword("trotro");
 
         // Bush Canteen Transport Stop
-        Location bushCanteen = new Location("TRANS002", "Bush Canteen", 5.6455967, -0.1800598, "transport");
+        Location bushCanteen = new Location("TRANS002", "Bush Canteen", 5.648163476878036, -0.18103157276308554, "transport");
         bushCanteen.addKeyword("bush canteen");
         bushCanteen.addKeyword("transport");
         bushCanteen.addKeyword("trotro");
@@ -343,9 +384,16 @@ public class UGCampusDataEnhanced {
         campusGraph.addLocation(artsBuilding);
         campusGraph.addLocation(businessSchool);
         campusGraph.addLocation(lawSchool);
-        campusGraph.addLocation(healthSciences);
+        campusGraph.addLocation(humanities);
         campusGraph.addLocation(engineering);
         campusGraph.addLocation(africanStudies);
+        campusGraph.addLocation(mathDepartment);
+        campusGraph.addLocation(statsDepartment);
+        campusGraph.addLocation(jqb);
+        campusGraph.addLocation(kab);
+        campusGraph.addLocation(nnb);
+        campusGraph.addLocation(psychology);
+        campusGraph.addLocation(gcbBuilding);
 
         // Halls of Residence
         campusGraph.addLocation(commonwealthHall);
@@ -360,7 +408,7 @@ public class UGCampusDataEnhanced {
 
         // Service Buildings
         campusGraph.addLocation(ugHospital);
-        campusGraph.addLocation(gcbBank);
+        campusGraph.addLocation(bankingSquare);
         campusGraph.addLocation(postOffice);
         campusGraph.addLocation(bookshop);
         campusGraph.addLocation(mainGate);
@@ -403,6 +451,11 @@ public class UGCampusDataEnhanced {
         tfHostel.addKeyword("ghana hostels");
         tfHostel.addKeyword("hostel");
 
+        Location pentHostel = new Location("HOST004", "Pentagon Hostel", 5.657038884040756, -0.18185635610307493, "residential");
+        pentHostel.addKeyword("pentagon");
+        pentHostel.addKeyword("pent");
+        pentHostel.addKeyword("hostel");
+
         // Transport Hubs
         campusGraph.addLocation(okponglo);
         campusGraph.addLocation(bushCanteen);
@@ -412,6 +465,7 @@ public class UGCampusDataEnhanced {
         campusGraph.addLocation(evandy);
         campusGraph.addLocation(bani);
         campusGraph.addLocation(tfHostel);
+        campusGraph.addLocation(pentHostel);
 
         // =================== CAMPUS ROADS AND CONNECTIONS ===================
 
@@ -461,10 +515,10 @@ public class UGCampusDataEnhanced {
         // Cross-campus shortcuts
         addEdgeFromOSRM(campusGraph, balmeLibrary, sportsComplex, "Cross Campus Road");
         addEdgeFromOSRM(campusGraph, cbas, pentagon, "South Campus Road");
-        addEdgeFromOSRM(campusGraph, healthSciences, commonwealthHall, "North Campus Road");
+        addEdgeFromOSRM(campusGraph, humanities, commonwealthHall, "North Campus Road");
 
         // Additional interconnections for better routing
-        addEdgeFromOSRM(campusGraph, gcbBank, nightMarket, "Market Access");
+        addEdgeFromOSRM(campusGraph, bankingSquare, nightMarket, "Market Access");
         addEdgeFromOSRM(campusGraph, foodCourt, chapel, "Central Path");
         addEdgeFromOSRM(campusGraph, africanStudies, ugRadio, "Cultural Path");
         addEdgeFromOSRM(campusGraph, compSci, engineering, "Tech Road");
