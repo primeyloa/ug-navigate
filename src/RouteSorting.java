@@ -117,16 +117,21 @@ class RouteSorting {
     public static class AdaptiveSorting {
 
         public static void sortOptimal(List<Route> routes, String criteria) {
+            Comparator<Route> comparator = getComparator(criteria);
             if (routes.size() <= 10) {
                 // Use insertion sort for small datasets
-                insertionSort(routes, getComparator(criteria));
-            } else if (isNearlySorted(routes, getComparator(criteria))) {
-                // Use merge sort for nearly sorted data
-                MergeSort.sortByComposite(routes);
-            } else {
-                // Use quick sort for random data
-                QuickSort.sortByDistance(routes);
+                insertionSort(routes, comparator);
+                return;
             }
+
+            if (isNearlySorted(routes, comparator)) {
+                // Stable sort for nearly-sorted data according to the requested criteria
+                routes.sort(comparator);
+                return;
+            }
+
+            // Default: comparator-driven sort (leverages TimSort in Java which is adaptive)
+            routes.sort(comparator);
         }
 
         private static boolean isNearlySorted(List<Route> routes, Comparator<Route> comparator) {

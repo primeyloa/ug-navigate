@@ -35,6 +35,7 @@ public class UGNavigateEngine {
      */
     public RouteResult findOptimalRoutes(String sourceId, String destinationId,
                                          RoutePreferences preferences) {
+        long startedAt = System.currentTimeMillis();
         Location source = campusGraph.getLocationById(sourceId);
         Location destination = campusGraph.getLocationById(destinationId);
 
@@ -112,7 +113,8 @@ public class UGNavigateEngine {
         // Cache results (Dynamic Programming)
         routeCache.put(cacheKey, allRoutes);
 
-        return new RouteResult(allRoutes, "Routes found successfully");
+        long duration = System.currentTimeMillis() - startedAt;
+        return new RouteResult(allRoutes, "Routes found successfully", duration, startedAt);
     }
 
     /**
@@ -239,24 +241,8 @@ public class UGNavigateEngine {
      * Generate unique signature for route comparison
      */
     private String generateRouteSignature(Route route) {
-        StringBuilder signature = new StringBuilder();
-        signature.append(route.getTransportMode()).append(":");
-
-        List<Location> mainPoints = route.getPath();
-        if (mainPoints.size() > 4) {
-            // For long routes, use start, middle points, and end
-            signature.append(mainPoints.get(0).getId()).append("->");
-            signature.append(mainPoints.get(mainPoints.size() / 3).getId()).append("->");
-            signature.append(mainPoints.get(2 * mainPoints.size() / 3).getId()).append("->");
-            signature.append(mainPoints.get(mainPoints.size() - 1).getId());
-        } else {
-            // For short routes, use all points
-            signature.append(mainPoints.stream()
-                    .map(Location::getId)
-                    .collect(Collectors.joining("->")));
-        }
-
-        return signature.toString();
+        // Use full ordered path to avoid considering looped routes as unique
+        return route.getTransportMode()+":"+route.getPath().stream().map(Location::getId).collect(Collectors.joining("->"));
     }
 
     /**

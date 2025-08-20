@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Need to make changes to UGNavigateEngineEnhanced">
+    <list default="true" id="81448c1e-f825-4ad2-a3b8-7aa1d6de358f" name="Changes" comment="Updates. Added a map to the application, sourced accurate data from OSM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/AlgorithmDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$FindRoutesActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication$LocationItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateConsole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGNavigateEngine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UGNavigateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGNavigateApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/osrm_cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/osrm_cache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusDataEnhanced.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ug-navigate/UGCampusDataEnhanced.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UGCampusDataEnhanced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UGCampusDataEnhanced.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,28 +56,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConsoleApp.executor": "Run",
-    "Application.GuiApp.executor": "Run",
-    "Application.UGNavigateApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fix-remove-duplicate",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/amoak/AppData/Roaming/JetBrains/IntelliJIdea2024.2/scratches",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/repos/ug-navigate/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConsoleApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GuiApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UGNavigateApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nii01/Desktop/Projects/ug-navigate&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/repos/ug-navigate/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\amoak\AppData\Roaming\JetBrains\IntelliJIdea2024.2\scratches" />
@@ -134,8 +131,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +146,11 @@
       <updated>1755390758123</updated>
       <workItem from="1755390765304" duration="12031000" />
       <workItem from="1755518472947" duration="1877000" />
+      <workItem from="1755596259960" duration="921000" />
+      <workItem from="1755614295082" duration="643000" />
+      <workItem from="1755614973911" duration="13760000" />
+      <workItem from="1755638635378" duration="5611000" />
+      <workItem from="1755678223602" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="files removed">
       <option name="closed" value="true" />
@@ -222,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755474912088</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updates. Added a map to the application, sourced accurate data from OSM">
+      <option name="closed" value="true" />
+      <created>1755647522708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755647522708</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,7 +254,8 @@
     <MESSAGE value="files removed" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;algorithms/algorithms.iml&#10;#&#9;ug-navigate.iml" />
     <MESSAGE value="Need to make changes to UGNavigateEngineEnhanced" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need to make changes to UGNavigateEngineEnhanced" />
+    <MESSAGE value="Updates. Added a map to the application, sourced accurate data from OSM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates. Added a map to the application, sourced accurate data from OSM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

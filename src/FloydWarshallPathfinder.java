@@ -18,10 +18,15 @@ class FloydWarshallPathfinder {
         }
 
         public Route getPath(Location source, Location destination, String transportMode, CampusGraph graph) {
-            int srcIndex = locations.indexOf(source);
-            int destIndex = locations.indexOf(destination);
+            // Build index map once for O(1) lookups
+            Map<Location, Integer> indexByLocation = new HashMap<>();
+            for (int i = 0; i < locations.size(); i++) {
+                indexByLocation.put(locations.get(i), i);
+            }
+            Integer srcIndex = indexByLocation.get(source);
+            Integer destIndex = indexByLocation.get(destination);
 
-            if (srcIndex == -1 || destIndex == -1 || distances[srcIndex][destIndex] == Double.POSITIVE_INFINITY) {
+            if (srcIndex == null || destIndex == null || distances[srcIndex][destIndex] == Double.POSITIVE_INFINITY) {
                 return null;
             }
 
@@ -30,7 +35,7 @@ class FloydWarshallPathfinder {
             path.add(current);
 
             while (!current.equals(destination)) {
-                int currentIndex = locations.indexOf(current);
+                Integer currentIndex = indexByLocation.get(current);
                 current = next[currentIndex][destIndex];
                 if (current == null) break;
                 path.add(current);
